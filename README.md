@@ -655,3 +655,6 @@ Computational Thinking:
 - **Abstraction:** The system abstracts away complexities of email sending, focusing on the construction and logging of the email message for demonstration purposes.
 - **Algorithm Design:** The algorithm for "sending" an email involves parsing form data, retrieving user information, constructing an email message, logging the message, and redirecting the user, all of which are well-defined steps executed to simulate the email sending process.
 
+# Criteria D: Functionality
+
+# Criteria E: Evaluation
