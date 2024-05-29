@@ -1,8 +1,6 @@
 # Criteria C: Development
 ## Login system (SC1)
 
-The login system in the provided code ensures that users can securely access their accounts by verifying their credentials. Let's break down how this works and how it represents computational thinking:
-
 1. **Route Definition:**
    ```python
    @app.route('/login', methods=['GET', 'POST'])
