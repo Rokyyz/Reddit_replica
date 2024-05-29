@@ -7,7 +7,6 @@ The login system in the provided code ensures that users can securely access the
    ```python
    @app.route('/login', methods=['GET', 'POST'])
    def login():
-       # ...
    ```
 
    This defines a route `/login` for handling both GET and POST requests. GET requests are used to render the login form, while POST requests are used for submitting login credentials.
