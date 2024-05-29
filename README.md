@@ -100,61 +100,6 @@ Computational Thinking:
 - **Abstraction:** The system abstracts away the complexities of password hashing and database management, allowing developers to focus on the higher-level logic of user registration.
 - **Algorithm Design:** The algorithm for user registration involves input validation, database querying, password hashing, and session management, all of which are well-defined steps in the signup process.
 
-## Post system (SC2)
-
-**I have to note that this was the most difficult part of the code for me:**
-
-1. **Route Definition:**
-   ```python
-   @app.route('/upload', methods=['GET', 'POST'])
-   @login_required
-   def upload():
-       # ...
-   ```
-
-   This defines a route `/upload` for handling both GET and POST requests. The `@login_required` decorator ensures that only authenticated users can access this route.
-
-2. **Form Submission Handling:**
-   ```python
-   if request.method == 'POST':
-       title = request.form['title']
-       content = request.form['content']
-       file = request.files['image']
-   ```
-
-   When the form is submitted via POST, the title, content, and image file uploaded by the user are retrieved from the form data.
-
-3. **File Upload and Storage:**
-   ```python
-   if file and allowed_file(file.filename):
-       filename = secure_filename(file.filename)
-       file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-       image_url = url_for('static', filename=f'uploads/{filename}')
-   ```
-
-   If a file is uploaded and it has an allowed file extension (e.g., png, jpg), the file is saved to the server's designated upload folder. A URL for accessing the uploaded image is generated using `url_for`, which is then stored in the database.
-
-4. **Post Creation:**
-   ```python
-   new_post = Post(title=title, content=content, image_url=image_url, user_id=session['user_id'])
-   db.session.add(new_post)
-   db.session.commit()
-   ```
-
-   A new post object is created with the provided title, content, image URL, and the ID of the authenticated user who uploaded the post. The post object is added to the database, committing the transaction.
-
-5. **Redirection:**
-   ```python
-   return redirect(url_for('dashboard'))
-   ```
-
-   Upon successful upload, the user is redirected to the dashboard page where they can view their uploaded post along with other content.
-
-Computational Thinking:
-- **Decomposition:** The upload system decomposes the task of uploading a post into smaller steps: form submission handling, file upload and storage, post creation, and redirection.
-- **Pattern Recognition:** The system recognizes patterns in file extensions to determine if an uploaded file is allowed or not. It also recognizes patterns in route handling and user authentication to ensure proper access control.
-- **Abstraction:** The system abstracts away the complexities of file handling, URL generation, and database management, allowing developers to focus on the higher-level logic of post uploading.
-- **Algorithm Design:** The algorithm for uploading a post involves multiple steps such as file validation, storage, database interaction, and redirection, all of which are well-defined and sequentially executed to ensure a smooth user experience.
 
 ## Add comment System (SC2)
 
@@ -582,6 +527,64 @@ Computational Thinking:
 - **Pattern Recognition:** The system recognizes patterns in authentication, database querying, form submission handling, and template rendering.
 - **Abstraction:** The system abstracts away complexities of user authentication, database operations, form processing, and template rendering, allowing developers to focus on the logic specific to the profile functionality.
 - **Algorithm Design:** The algorithm for the profile system involves checking user authentication, retrieving user data, processing form submissions, updating user information in the database, and rendering the profile page with updated content.
+
+## Upload images System (SC6 HLs)
+
+## Post system (SC2)
+
+**I have to note that this was the most difficult part of the code for me:**
+
+1. **Route Definition:**
+   ```python
+   @app.route('/upload', methods=['GET', 'POST'])
+   @login_required
+   def upload():
+       # ...
+   ```
+
+   This defines a route `/upload` for handling both GET and POST requests. The `@login_required` decorator ensures that only authenticated users can access this route.
+
+2. **Form Submission Handling:**
+   ```python
+   if request.method == 'POST':
+       title = request.form['title']
+       content = request.form['content']
+       file = request.files['image']
+   ```
+
+   When the form is submitted via POST, the title, content, and image file uploaded by the user are retrieved from the form data.
+
+3. **File Upload and Storage:**
+   ```python
+   if file and allowed_file(file.filename):
+       filename = secure_filename(file.filename)
+       file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+       image_url = url_for('static', filename=f'uploads/{filename}')
+   ```
+
+   If a file is uploaded and it has an allowed file extension (e.g., png, jpg), the file is saved to the server's designated upload folder. A URL for accessing the uploaded image is generated using `url_for`, which is then stored in the database.
+
+4. **Post Creation:**
+   ```python
+   new_post = Post(title=title, content=content, image_url=image_url, user_id=session['user_id'])
+   db.session.add(new_post)
+   db.session.commit()
+   ```
+
+   A new post object is created with the provided title, content, image URL, and the ID of the authenticated user who uploaded the post. The post object is added to the database, committing the transaction.
+
+5. **Redirection:**
+   ```python
+   return redirect(url_for('dashboard'))
+   ```
+
+   Upon successful upload, the user is redirected to the dashboard page where they can view their uploaded post along with other content.
+
+Computational Thinking:
+- **Decomposition:** The upload system decomposes the task of uploading a post into smaller steps: form submission handling, file upload and storage, post creation, and redirection.
+- **Pattern Recognition:** The system recognizes patterns in file extensions to determine if an uploaded file is allowed or not. It also recognizes patterns in route handling and user authentication to ensure proper access control.
+- **Abstraction:** The system abstracts away the complexities of file handling, URL generation, and database management, allowing developers to focus on the higher-level logic of post uploading.
+- **Algorithm Design:** The algorithm for uploading a post involves multiple steps such as file validation, storage, database interaction, and redirection, all of which are well-defined and sequentially executed to ensure a smooth user experience.
 
 ## Send email System (SC7 HL++)
 
