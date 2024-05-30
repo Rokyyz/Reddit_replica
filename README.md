@@ -94,8 +94,19 @@ Create a Flask Web application for an online bulletin board system (like reddit)
    - The `like_count` method in the `Post` model calculates the number of likes a post has, demonstrating how custom methods can be added to models for additional functionality.
 
 
-## Sources
+### Sources
 
+- “Decorators in Python.” GeeksforGeeks, https://www.geeksforgeeks.org/decorators-in-python/.
+- “Flask HTTP Methods, Handle GET & Post Requests.” GeeksforGeeks, GeeksforGeeks, 2 Feb. 2023, https://www.geeksforgeeks.org/flask-http-methods-handle-get-post-requests/.
+- "Password Hashing With Python." Real Python, https://realpython.com/python-hashlib/.
+- "Flask Sessions." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/quickstart/#sessions.
+- "SQLAlchemy ORM Tutorial for Python Developers." DigitalOcean, https://www.digitalocean.com/community/tutorials/how-to-use-one-to-many-many-to-one-and-many-to-many-relationships-in-sqlalchemy-and-flask.
+- "Flask Flash Messages." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/patterns/flashing/.
+- "File Uploads in Flask." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/patterns/fileuploads/.
+- "Flask Templating." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/tutorial/templates/.
+- "Handling Forms in Flask." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/patterns/wtforms/.
+- "Flask and AJAX." Real Python, https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/.
+- "Redirects and Errors." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/quickstart/#redirects-and-errors.
 
 
 ## Code explain 
