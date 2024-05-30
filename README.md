@@ -530,8 +530,6 @@ Computational Thinking:
 
 ## Upload images System (SC6 HLs)
 
-## Post system (SC2)
-
 **I have to note that this was the most difficult part of the code for me:**
 
 1. **Route Definition:**
