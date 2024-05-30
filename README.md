@@ -1,9 +1,3 @@
-# Background
-
-G11 CS Project Unit 4 required us to attempt a recreation of an online board system, for example, Reddit. To be assessed, we will be evaluated using Criteria C, D, and E using an MVP.
-
-My choice was to develop a combination of Instagram and Reddit.
-
 # Criteria C: Development
 
 ## Success Criteria
@@ -174,24 +168,34 @@ Create a Flask Web application for an online bulletin board system (like reddit)
 
 ### Sources
 
-1. “Decorators in Python.” GeeksforGeeks, https://www.geeksforgeeks.org/decorators-in-python/.
-2. “Flask HTTP Methods, Handle GET & Post Requests.” GeeksforGeeks, GeeksforGeeks, 2 Feb. 2023, https://www.geeksforgeeks.org/flask-http-methods-handle-get-post-requests/.
-3. "Password Hashing With Python." Real Python, https://realpython.com/python-hashlib/.
-4. "Flask Sessions." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/quickstart/#sessions.
-5. "SQLAlchemy ORM Tutorial for Python Developers." DigitalOcean, https://www.digitalocean.com/community/tutorials/how-to-use-one-to-many-many-to-one-and-many-to-many-relationships-in-sqlalchemy-and-flask.
-6. "SQLAlchemy Many-to-Many Relationships." SQLAlchemy Documentation, https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html#many-to-many.
-7. "SQLAlchemy ORM Querying." SQLAlchemy Documentation, https://docs.sqlalchemy.org/en/14/orm/query.html.
-8. "Flask Flash Messages." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/patterns/flashing/.
-9. "File Uploads in Flask." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/patterns/fileuploads/.
-10. "Flask Templating." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/tutorial/templates/.
-11. "Handling Forms in Flask." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/patterns/wtforms/.
-12. "Flask and AJAX." Real Python, https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/.
-13. "Redirects and Errors." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/quickstart/#redirects-and-errors.
-14. "Configuration Handling." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/config/.
-15. "Basic Date and Time Types." Python Documentation, https://docs.python.org/3/library/datetime.html.
-16. "Flask RESTful Quickstart." Flask-RESTful Documentation, https://flask-restful.readthedocs.io/en/latest/quickstart.html.
-17. "Cirrus CSS.” Cirrus, https://www.cirrus-ui.com/buttons/basics.
-
+1. “Flask Library.” Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/.
+2. “Decorators in Python.” GeeksforGeeks, https://www.geeksforgeeks.org/decorators-in-python/.
+3. “Functions in Python.” Real Python, https://realpython.com/defining-your-own-python-function/.
+4. “Conditional Statements in Python.” GeeksforGeeks, https://www.geeksforgeeks.org/python-conditional-statements/.
+5. “Variables in Python.” W3Schools, https://www.w3schools.com/python/python_variables.asp.
+6. “Jinja2 Templating.” Jinja2 Documentation, https://jinja.palletsprojects.com/en/3.0.x/.
+7. “Flask HTTP Methods, Handle GET & Post Requests.” GeeksforGeeks, https://www.geeksforgeeks.org/flask-http-methods-handle-get-post-requests/.
+8. “Flask Sessions.” Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/quickstart/#sessions.
+9. “SQLAlchemy ORM Tutorial for Python Developers.” DigitalOcean, https://www.digitalocean.com/community/tutorials/how-to-use-one-to-many-many-to-one-and-many-to-many-relationships-in-sqlalchemy-and-flask.
+10. “Flask-WTF.” Flask-WTF Documentation, https://flask-wtf.readthedocs.io/.
+11. “Werkzeug Security.” Werkzeug Documentation, https://werkzeug.palletsprojects.com/en/2.0.x/utils/#module-werkzeug.security.
+12. “File Uploads in Flask.” Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/patterns/fileuploads/.
+13. “Flask Flash Messages.” Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/patterns/flashing/.
+14. “Working with JSON in Flask.” Real Python, https://realpython.com/primer-on-jinja-templating/#using-json-in-flask.
+15. “Password Hashing With Python.” Real Python, https://realpython.com/python-hashlib/.
+16. “Datetime Module in Python.” Python Documentation, https://docs.python.org/3/library/datetime.html.
+17. “OOP Principles in Python.” Real Python, https://realpython.com/python3-object-oriented-programming/.
+18. “SQLAlchemy Relationships.” SQLAlchemy Documentation, https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html.
+19. “Flask-Migrate.” Flask-Migrate Documentation, https://flask-migrate.readthedocs.io/.
+20. “Primary and Unique Constraints in SQLAlchemy.” SQLAlchemy Documentation, https://docs.sqlalchemy.org/en/14/core/constraints.html.
+21. “Werkzeug Security.” Werkzeug Documentation, https://werkzeug.palletsprojects.com/en/2.0.x/utils/#werkzeug.utils.secure_filename.
+22. “Flask-Login.” Flask-Login Documentation, https://flask-login.readthedocs.io/.
+23. “Flask-Mail.” Flask-Mail Documentation, https://pythonhosted.org/Flask-Mail/.
+24. “Flask-Bootstrap.” Flask-Bootstrap Documentation, https://pythonhosted.org/Flask-Bootstrap/.
+25. “Functools.wraps.” Python Documentation, https://docs.python.org/3/library/functools.html#functools.wraps.
+26. “OS Module in Python.” Python Documentation, https://docs.python.org/3/library/os.html.
+27. “Flask RESTful Quickstart.” Flask-RESTful Documentation, https://flask-restful.readthedocs.io/en/latest/quickstart.html.
+28. “Cirrus CSS.” Cirrus, https://www.cirrus-ui.com/buttons/basics.
 
 ## Code explain 
 
@@ -892,4 +896,45 @@ Computational Thinking:
 | The website's database schema supports relationships between users, posts, comments, and likes| Yes      | SQLAlchemy models define relationships between users, posts, comments, and likes.                                                   |
 | The website provides a `follow_users` page to manage followed users                           | Yes      | Users can view and manage the list of users they follow through the `follow_users` page.                                            |
 | The website handles form submission using both GET and POST methods                           | Yes      | Forms are handled using appropriate HTTP methods (GET for displaying forms, POST for form submissions).                             |
+
+# Citations
+
+[^1]: “Flask Library.” Flask Documentation, Accessed May 15th 2024,(https://flask.palletsprojects.com/en/2.3.x/)
+
+[^2]: “Decorators in Python.” GeeksforGeeks, 23 Jan, 2023, https://www.geeksforgeeks.org/decorators-in-python/.
+
+[^3]: “Functions in Python.” Real Python, Accessed May 25th 2024, https://realpython.com/defining-your-own-python-function/
+
+[^4]: “Conditional Statements in Python.” GeeksforGeeks, Accessed May 17th 2024, https://www.geeksforgeeks.org/python-conditional-statements/.
+
+[^5]: “Variables in Python.” W3Schools, Accessed May 30th 2024,https://www.w3schools.com/python/python_variables.asp.
+
+
+[^6]: “Jinja2 Templating.” Jinja2 Documentation, Accessed May 16th 2024, https://jinja.palletsprojects.com/en/3.0.x/.
+
+
+[^7]:
+
+[^8]:
+
+[^9]:
+[^10]:
+[^11]:
+[^12]:
+[^13]:
+[^14]:
+[^15]:
+[^16]:
+[^17]:
+[^18]:
+[^19]:
+[^20]:
+[^21]:
+[^22]:
+[^23]:
+[^24]:
+[^25]:
+[^26]:
+[^27]:
+[^28]:
 
