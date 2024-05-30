@@ -23,10 +23,6 @@ Create a Flask Web application for an online bulletin board system (like reddit)
 
 7. [HL++] send emails
 
-## Techniques used 
-
-The provided code utilizes various programming techniques and libraries to create a web application with user authentication, posting, and interaction features. Here's a breakdown of the techniques used in this code:
-
 ### Techniques Used
 
 1. **Flask Library**:
