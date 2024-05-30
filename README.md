@@ -96,17 +96,22 @@ Create a Flask Web application for an online bulletin board system (like reddit)
 
 ### Sources
 
-- “Decorators in Python.” GeeksforGeeks, https://www.geeksforgeeks.org/decorators-in-python/.
-- “Flask HTTP Methods, Handle GET & Post Requests.” GeeksforGeeks, GeeksforGeeks, 2 Feb. 2023, https://www.geeksforgeeks.org/flask-http-methods-handle-get-post-requests/.
-- "Password Hashing With Python." Real Python, https://realpython.com/python-hashlib/.
-- "Flask Sessions." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/quickstart/#sessions.
-- "SQLAlchemy ORM Tutorial for Python Developers." DigitalOcean, https://www.digitalocean.com/community/tutorials/how-to-use-one-to-many-many-to-one-and-many-to-many-relationships-in-sqlalchemy-and-flask.
-- "Flask Flash Messages." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/patterns/flashing/.
-- "File Uploads in Flask." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/patterns/fileuploads/.
-- "Flask Templating." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/tutorial/templates/.
-- "Handling Forms in Flask." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/patterns/wtforms/.
-- "Flask and AJAX." Real Python, https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/.
-- "Redirects and Errors." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/quickstart/#redirects-and-errors.
+1. “Decorators in Python.” GeeksforGeeks, https://www.geeksforgeeks.org/decorators-in-python/.
+2. “Flask HTTP Methods, Handle GET & Post Requests.” GeeksforGeeks, GeeksforGeeks, 2 Feb. 2023, https://www.geeksforgeeks.org/flask-http-methods-handle-get-post-requests/.
+3. "Password Hashing With Python." Real Python, https://realpython.com/python-hashlib/.
+4. "Flask Sessions." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/quickstart/#sessions.
+5. "SQLAlchemy ORM Tutorial for Python Developers." DigitalOcean, https://www.digitalocean.com/community/tutorials/how-to-use-one-to-many-many-to-one-and-many-to-many-relationships-in-sqlalchemy-and-flask.
+6. "SQLAlchemy Many-to-Many Relationships." SQLAlchemy Documentation, https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html#many-to-many.
+7. "SQLAlchemy ORM Querying." SQLAlchemy Documentation, https://docs.sqlalchemy.org/en/14/orm/query.html.
+8. "Flask Flash Messages." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/patterns/flashing/.
+9. "File Uploads in Flask." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/patterns/fileuploads/.
+10. "Flask Templating." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/tutorial/templates/.
+11. "Handling Forms in Flask." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/patterns/wtforms/.
+12. "Flask and AJAX." Real Python, https://realpython.com/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/.
+13. "Redirects and Errors." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/quickstart/#redirects-and-errors.
+14. "Configuration Handling." Flask Documentation, https://flask.palletsprojects.com/en/2.0.x/config/.
+15. "Basic Date and Time Types." Python Documentation, https://docs.python.org/3/library/datetime.html.
+16. "Flask RESTful Quickstart." Flask-RESTful Documentation, https://flask-restful.readthedocs.io/en/latest/quickstart.html.
 
 
 ## Code explain 
