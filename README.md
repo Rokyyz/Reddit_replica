@@ -1,6 +1,6 @@
 # Background
 For our Unit 4 and final G11 CS project we were tasked with re-creating a online board system such as reddit. Solely evaluated using Criteria C, D and E using a MVP.
-In accordance with this I chose to develop a redesign that would solely surround fashion, I got some inspiration from Pinterest [1]
+In accordance with this I chose to develop a redesign that would solely surround fashion, I got some inspiration from Pinterest
 
 # Criteria C: Development
 ## Success Criteria
