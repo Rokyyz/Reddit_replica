@@ -198,6 +198,7 @@ Create a Flask Web application for an online bulletin board system (like reddit)
 ## Code explain 
 
 ## Login system (SC1)
+In order to satisfy the users' needs set by the success criteria, a login system had to be created. This would ensure that an already registered account wuld be able to log in seemlessly and access only the information relevant with their profile and have the tools to edit the posts and information set by them as well as upload new information
 
 1. **Route Definition:**
    ```python
@@ -251,6 +252,7 @@ Computational Thinking:
 
 
 ## Signup System (SC1)
+The success criteria also states that a signup system needs to be created. This would ensure that a user can register their account and later or log into the web application with their already existing account, on top of having their register data saved in a safe manner - password hashed. The program would also make sure that the email inputted has the correct format to be manipulated with if an email was to be sent.
 
 1. **Route Definition:**
    ```python
@@ -268,7 +270,19 @@ Computational Thinking:
        password = request.form['password']
    ```
 
-   When the form is submitted via POST, the username, email, and password entered by the user are retrieved from the form data.
+1. **Method Check:**
+   - The `request.method == 'POST'` condition checks if the form data is being submitted via the POST method. In web development, the POST method is commonly used to send data to the server for processing, such as when submitting a form.
+
+2. **Form Data Retrieval:**
+   - If the condition `request.method == 'POST'` is met, the code proceeds to extract data from the form.
+   - `request.form['username']`: This line retrieves the value of the `username` field from the submitted form data. The `request.form` dictionary contains all the form data submitted via the POST request.
+   - `request.form['email']`: Similarly, this line retrieves the value of the `email` field from the form data.
+   - `request.form['password']`: This line retrieves the value of the `password` field from the form data.
+
+3. **Data Assignment:**
+   - The retrieved form data (username, email, and password) is assigned to corresponding variables (`username`, `email`, and `password`). These variables will be used later in the code for processing, such as creating a new user account in the database.
+
+
 
 3. **Input Validation:**
    ```python
@@ -298,7 +312,21 @@ Computational Thinking:
    session['user_id'] = new_user.id
    ```
 
-   If input validation passes and no existing user is found, the password is hashed using a secure hashing algorithm. A new user object is then created with the provided username, email, and hashed password. The user object is added to the database, and the user is automatically logged in by storing their user ID in the session.
+1. **Password Hashing:**
+   - `generate_password_hash(password, method='pbkdf2:sha256')`: This line generates a secure hash of the user's password. The `generate_password_hash` function takes the password as input and applies a cryptographic hashing algorithm (in this case, PBKDF2 with SHA-256) to securely hash the password. Hashing the password ensures that it is not stored in plain text in the database, enhancing security.
+
+2. **User Creation:**
+   - `new_user = User(username=username, email=email, password=hashed_password)`: Here, a new instance of the `User` model is created with the provided username, email, and hashed password. The `User` model likely represents a table in the database where user information is stored. By creating a new `User` object, we are preparing to insert this user's information into the database.
+
+3. **Database Interaction:**
+   - `db.session.add(new_user)`: This line adds the new user object (`new_user`) to the current database session. This step doesn't immediately commit the changes to the database but stages them for later committing.
+
+4. **Committing Changes:**
+   - `db.session.commit()`: This line commits the changes made in the current database session to the database. It effectively adds the new user to the database. Once committed, the changes become permanent.
+
+5. **Session Management:**
+   - `session['user_id'] = new_user.id`: After successfully adding the new user to the database, the user's ID is stored in the Flask session. Storing the user's ID in the session allows Flask to recognize the user as authenticated in subsequent requests, enabling features like user-specific content and authentication checks.
+
 
 Computational Thinking:
 - **Decomposition:** The signup system breaks down the task of user registration into smaller steps: input validation, user existence check, password hashing, and user creation.
