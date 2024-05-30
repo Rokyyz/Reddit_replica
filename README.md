@@ -1,3 +1,26 @@
+# Background
+For our Unit 4 and final G11 CS project we were tasked with re-creating a online board system such as reddit. Solely evaluated using Criteria C, D and E using a MVP.
+In accordance with this I chose to develop a redesign that would solely surround fashion, I got some inspiration from Pinterest [1]
+
+# Success Criteria
+Create a Flask Web application for an online bulletin board system (like reddit). You are free to set the general theme, groups, visuals (CSS), topics, etc, but you need:
+
+1. A login/registration system.
+
+2. A posting system to EDIT/CREATE/DELETE comments.
+
+3. A system to add/remove likes.
+
+4. A system to follow/unfollow users, follow/unfollow topics or groups.
+
+5. A profile page with relevant information
+
+6. [HLs] upload images
+
+7. [HL++] send emails
+
+
+
 # Criteria C: Development
 ## Login system (SC1)
 
