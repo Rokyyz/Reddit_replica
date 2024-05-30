@@ -23,6 +23,53 @@ Create a Flask Web application for an online bulletin board system (like reddit)
 
 7. [HL++] send emails
 
+## Techniques used 
+
+Flask Library:
+
+The code uses Flask to create a web application. Flask is a micro web framework for Python.
+Routes are defined using Flask decorators like @app.route.
+Functions:
+
+Functions are used extensively for defining routes and handling logic. Example: login_required, allowed_file, and all route functions (login, signup, etc.).
+If Statements:
+
+Conditional logic is used throughout the code to handle various conditions. Example: Checking if the user is logged in, if a user exists, or if a file is allowed.
+Variables:
+
+Variables are used to store data temporarily within functions and to hold configuration settings like ALLOWED_EXTENSIONS.
+HTML Template Usage:
+
+Flask's render_template function is used to render HTML templates. This allows for separation of HTML content from Python code.
+Get/Post Methods:
+
+The code handles different HTTP methods (GET and POST) for various routes to manage form submissions and data retrieval.
+Session Management:
+
+Flask's session object is used to manage user sessions, storing the user_id to keep track of logged-in users.
+Database Interaction:
+
+SQLAlchemy is used for ORM (Object Relational Mapping) to interact with the database. Example: querying users, posts, comments, and likes.
+Example models are User, Post, Comment, and Like.
+Encryption:
+
+The code uses generate_password_hash and check_password_hash from werkzeug.security for password hashing and verification.
+File Handling:
+
+Functions like allowed_file and the usage of secure_filename handle file uploads securely.
+Flash Messages:
+
+Flask's flash function is used to display messages to the user.
+JSON:
+
+JSON responses are used for AJAX requests, such as in the follow_unfollow_user and add_comment routes.
+Decorators:
+
+The login_required decorator is a custom decorator to ensure routes are accessible only to logged-in users.
+Date and Time Handling:
+
+The datetime module is used to handle date and time, e.g., when a post or comment is created.
+
 
 ## Sources
 
