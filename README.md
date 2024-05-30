@@ -7,7 +7,7 @@
    def login():
    ```
 
-   This defines a route `/login` for handling both GET and POST requests. GET requests are used to render the login form, while POST requests are used for submitting login credentials.
+This line defines the /login route, which handles both GET and POST requests. A GET request renders the login form, while a POST request processes the login credentials submitted by the user.
 
 2. **Form Submission Handling:**
    ```python
@@ -16,8 +16,7 @@
        password = request.form['password']
    ```
 
-   When the form is submitted via POST, the username and password entered by the user are retrieved from the form data.
-
+When the form is submitted via POST, the username and password entered by the user are retrieved from the form data using the request.form dictionary. This extracts the values associated with the keys username and password.
 3. **User Authentication:**
    ```python
    user = User.query.filter_by(username=username).first()
@@ -29,11 +28,22 @@
        return redirect(url_for('login'))
    ```
 
-   Here, the code queries the database to find a user with the provided username. If a user is found and the password hash matches the stored hash for that user, the user is considered authenticated. Their user ID is stored in the session, and they are redirected to the dashboard. If authentication fails, an error message is flashed, and the user is redirected back to the login page.
+1) Database Query:
+The User.query.filter_by(username=username).first() line queries the database for a user with the provided username. The first() method returns the first result of the query, or None if no user is found.
+
+3) Password Verification:
+If a user is found, the check_password_hash(user.password, password) function checks if the hashed password stored in the database matches the password provided by the user. This ensures secure password verification.
+
+3) Session Management:
+If the username and password are valid, the user's ID is stored in the session using session['user_id'] = user.id. This keeps the user logged in across subsequent requests.
+
+4) Redirection:
+On successful login, the user is redirected to the dashboard with return redirect(url_for('dashboard')).
+If authentication fails, an error message is displayed using flash('Login Unsuccessful. Please check email and password', 'danger'), and the user is redirected back to the login page with return redirect(url_for('login')).
 
 4. **Security Considerations:**
-   - **Hashed Passwords:** The passwords are stored securely as hashed values using the `generate_password_hash` function. This ensures that even if the database is compromised, the passwords remain protected.
-   - **Session Management:** User authentication is maintained using Flask's session management. Once a user logs in, their user ID is stored in the session, allowing them to access restricted routes without needing to log in again for subsequent requests.
+   - **Hashed Passwords:** Passwords are stored as hashed values in the database using generate_password_hash. This adds a layer of security by ensuring that even if the database is compromised, the actual passwords are not exposed.
+   - **Session Management:** The Flask session is used to maintain user authentication state. The session dictionary securely stores the user ID, ensuring that users do not have to log in again for each request. Flask sessions are signed cryptographically, providing additional security.
 
 Computational Thinking:
 - **Decomposition:** The login system decomposes the task of user authentication into smaller, manageable steps: form submission handling, user authentication, and session management.
