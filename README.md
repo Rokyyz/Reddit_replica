@@ -907,32 +907,49 @@ Computational Thinking:
 
 [^5]: “Variables in Python.” W3Schools, Accessed May 30th 2024,https://www.w3schools.com/python/python_variables.asp.
 
-
 [^6]: “Jinja2 Templating.” Jinja2 Documentation, Accessed May 16th 2024, https://jinja.palletsprojects.com/en/3.0.x/.
 
+[^7]: “Flask HTTP Methods, Handle GET & Post Requests.” , GeeksforGeeks,  Accessed May 13th 2024, https://www.geeksforgeeks.org/flask-http-methods-handle-get-post-requests/
 
-[^7]:
+[^8]: “Flask Sessions.” Flask Documentation,  Accessed May 13th 2024 ,https://flask.palletsprojects.com/en/2.0.x/quickstart/#sessions.
 
-[^8]:
+[^9]: “SQLAlchemy ORM Tutorial for Python Developers.” DigitalOcean, Accessed May 11th 2024, https://www.digitalocean.com/community/tutorials/how-to-use-one-to-many-many-to-one-and-many-to-many-relationships-in-sqlalchemy-and-flask.
 
-[^9]:
-[^10]:
-[^11]:
-[^12]:
-[^13]:
-[^14]:
-[^15]:
-[^16]:
-[^17]:
-[^18]:
-[^19]:
-[^20]:
-[^21]:
-[^22]:
-[^23]:
-[^24]:
-[^25]:
-[^26]:
-[^27]:
-[^28]:
+[^10]: “Flask-WTF.” Flask-WTF Documentation,  Accessed May 12th 2024, https://flask-wtf.readthedocs.io/.
+
+[^11]: “Werkzeug Security.” Werkzeug Documentation, Accessed May 12th 2024, https://werkzeug.palletsprojects.com/en/2.0.x/utils/#module-werkzeug.security.
+
+[^12]: “File Uploads in Flask.” Flask Documentation, Accessed May 13th 2024, https://flask.palletsprojects.com/en/2.0.x/patterns/fileuploads/.
+
+[^13]: “Flask Flash Messages.” Flask Documentation, Accessed May 13th 2024, https://flask.palletsprojects.com/en/2.0.x/patterns/flashing/.
+
+[^14]: “Working with JSON in Flask.” Real Python, Accessed May 14th 2024, https://realpython.com/primer-on-jinja-templating/#using-json-in-flask.
+
+[^15]: “Password Hashing With Python.” Real Python, Accessed May 11th 2024, https://realpython.com/python-hashlib/.
+
+[^16]: “Datetime Module in Python.” Python Documentation, Accessed May 11th 2024, https://docs.python.org/3/library/datetime.html.
+
+[^17]: “OOP Principles in Python.” Real Python, Accessed May 15th 2024, https://realpython.com/python3-object-oriented-programming/.
+
+[^18]: “SQLAlchemy Relationships.” SQLAlchemy Documentation, Accessed May 14th 2024, https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html.
+
+[^19]: “Flask-Migrate.” Flask-Migrate Documentation, Accessed May 15th 2024, https://flask-migrate.readthedocs.io/.
+
+[^20]: “Primary and Unique Constraints in SQLAlchemy.” SQLAlchemy Documentation, Accessed May 15th 2024, https://docs.sqlalchemy.org/en/14/core/constraints.html.
+
+[^21]: “Werkzeug Security.” Werkzeug Documentation, Accessed May 16th 2024, https://werkzeug.palletsprojects.com/en/2.0.x/utils/#werkzeug.utils.secure_filename.
+
+[^22]: “Flask-Login.” Flask-Login Documentation, Accessed May 17th 2024, https://flask-login.readthedocs.io/.
+
+[^23]: “Flask-Mail.” Flask-Mail Documentation, Accessed May 18th 2024, https://pythonhosted.org/Flask-Mail/.
+
+[^24]: “Flask-Bootstrap.” Flask-Bootstrap Documentation, Accessed May 19th 2024, https://pythonhosted.org/Flask-Bootstrap/.
+
+[^25]: “Functools.wraps.” Python Documentation, Accessed May 20th 2024, https://docs.python.org/3/library/functools.html#functools.wraps.
+
+[^26]: “OS Module in Python.” Python Documentation, Accessed May 21st 2024, https://docs.python.org/3/library/os.html.
+
+[^27]: “Flask RESTful Quickstart.” Flask-RESTful Documentation,  Accessed May 22nd 2024, https://flask-restful.readthedocs.io/en/latest/quickstart.html.
+
+[^28]: “Cirrus CSS.” Cirrus, Accessed May 23rd 2024, https://www.cirrus-ui.com/buttons/basics.
 
