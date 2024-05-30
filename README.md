@@ -48,7 +48,6 @@ Computational Thinking:
    ```python
    @app.route('/signup', methods=['GET', 'POST'])
    def signup():
-       # ...
    ```
 
    This defines a route `/signup` for handling both GET and POST requests. GET requests are used to render the signup form, while POST requests are used for submitting signup data.
@@ -106,7 +105,6 @@ Computational Thinking:
    @app.route('/add_comment/<int:post_id>', methods=['POST'])
    @login_required
    def add_comment(post_id):
-       # ...
    ```
 
    This route `/add_comment/<int:post_id>` is defined to handle POST requests. It expects a post ID as part of the URL path. The `@login_required` decorator ensures that only authenticated users can access this route.
@@ -152,7 +150,6 @@ Computational Thinking:
    @app.route('/edit_comment/<int:comment_id>', methods=['POST'])
    @login_required
    def edit_comment(comment_id):
-       # ...
    ```
 
    This route `/edit_comment/<int:comment_id>` is configured to handle POST requests and requires user authentication with the `@login_required` decorator. It takes the comment ID as a parameter in the URL.
@@ -190,7 +187,6 @@ Computational Thinking:
    @app.route('/delete_comment/<int:comment_id>', methods=['POST'])
    @login_required
    def delete_comment(comment_id):
-       # ...
    ```
 
    This route `/delete_comment/<int:comment_id>` is configured to handle POST requests, expecting a comment ID as part of the URL path. The `@login_required` decorator ensures only authenticated users can access this route.
@@ -233,7 +229,6 @@ Computational Thinking:
    @app.route('/like_post', methods=['POST'])
    @login_required
    def like_post():
-       # ...
    ```
 
    This route `/like_post` is defined to handle POST requests. The `@login_required` decorator ensures only authenticated users can access this route.
@@ -284,7 +279,6 @@ Computational Thinking:
    @app.route('/unlike_post', methods=['POST'])
    @login_required
    def unlike_post():
-       # ...
    ```
 
    This route `/unlike_post` is designed to handle POST requests. The `@login_required` decorator ensures only authenticated users can access this route.
@@ -338,7 +332,6 @@ Computational Thinking:
    @app.route('/follow_unfollow_user', methods=['POST'])
    @login_required
    def follow_unfollow_user():
-       # ...
    ```
 
    This route `/follow_unfollow_user` is defined to handle POST requests. The `@login_required` decorator ensures that only authenticated users can access this route.
@@ -389,7 +382,6 @@ Computational Thinking:
    @app.route('/follow_unfollow_user', methods=['POST'])
    @login_required
    def follow_unfollow_user():
-       # ...
    ```
 
    This route `/follow_unfollow_user` is defined to handle POST requests. The `@login_required` decorator ensures that only authenticated users can access this route.
@@ -537,7 +529,6 @@ Computational Thinking:
    @app.route('/upload', methods=['GET', 'POST'])
    @login_required
    def upload():
-       # ...
    ```
 
    This defines a route `/upload` for handling both GET and POST requests. The `@login_required` decorator ensures that only authenticated users can access this route.
@@ -591,7 +582,6 @@ Computational Thinking:
    @app.route('/send_email', methods=['POST'])
    @login_required
    def send_email():
-       # ...
    ```
 
    This route `/send_email` is set up to handle POST requests and requires user authentication with the `@login_required` decorator.
