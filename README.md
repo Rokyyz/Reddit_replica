@@ -863,8 +863,12 @@ Computational Thinking:
 
 <img width="861" alt="Screenshot 2024-05-30 at 23 14 47" src="https://github.com/Rokyyz/Reddit_replica/assets/134658259/7aad8089-052a-4b2a-8e4e-46afc59c1b84">
 
+### Things to improve in the future based on my and another developer's review
 
-Certainly! Below is an evaluation table for your Flask application code, covering various criteria along with feedback on each point:
+* Ensure the comment editing is more seamless as sometimes it takes some time and refreshing of the web application to edit the comment.
+* Be able to change account name and/or password and not just bio, profile picture
+* Filter the topics available
+
 
 | **Criteria**                                                                                  | **Met?** | **Feedback**                                                                                                                        |
 |-----------------------------------------------------------------------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------|
@@ -888,6 +892,4 @@ Certainly! Below is an evaluation table for your Flask application code, coverin
 | The website's database schema supports relationships between users, posts, comments, and likes| Yes      | SQLAlchemy models define relationships between users, posts, comments, and likes.                                                   |
 | The website provides a `follow_users` page to manage followed users                           | Yes      | Users can view and manage the list of users they follow through the `follow_users` page.                                            |
 | The website handles form submission using both GET and POST methods                           | Yes      | Forms are handled using appropriate HTTP methods (GET for displaying forms, POST for form submissions).                             |
-
-This evaluation table highlights the main features and functionalities of your Flask application, along with confirming that each criterion has been met. It also provides feedback on the implementation of these features.
 
