@@ -864,3 +864,30 @@ Computational Thinking:
 <img width="861" alt="Screenshot 2024-05-30 at 23 14 47" src="https://github.com/Rokyyz/Reddit_replica/assets/134658259/7aad8089-052a-4b2a-8e4e-46afc59c1b84">
 
 
+Certainly! Below is an evaluation table for your Flask application code, covering various criteria along with feedback on each point:
+
+| **Criteria**                                                                                  | **Met?** | **Feedback**                                                                                                                        |
+|-----------------------------------------------------------------------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------|
+| The website has a login and registration system with input validations and secure storage     | Yes      | The application uses Flask-WTF for form handling and validation. Passwords are hashed using Werkzeug Security.                       |
+| The website only allows for users that are logged in to access certain features               | Yes      | The `login_required` decorator ensures that only logged-in users can access specific routes.                                         |
+| The website has a post system, that includes image, title, content, and date                  | Yes      | Users can create posts with titles, content, and images. Posts include timestamps.                                                  |
+| The website allows for a like and comment system, including editing and deleting comments     | Yes      | Users can like posts, add comments, and edit or delete their comments.                                                              |
+| The website includes an interactive feed displaying posts from followed users                 | Yes      | The dashboard shows posts from the logged-in user and users they follow.                                                            |
+| The website has a profile page where users can update their bio and profile picture           | Yes      | Users can update their bio and profile picture through the profile page.                                                            |
+| The website uses Flask-Mail to simulate sending emails                                        | Yes      | Emails are simulated and printed to the terminal when sending from the profile page.                                                |
+| The website has a follow/unfollow system for users                                            | Yes      | Users can follow and unfollow other users.                                                                                          |
+| The website uses SQLAlchemy ORM for database interactions                                     | Yes      | SQLAlchemy is used for defining models and managing database interactions.                                                          |
+| The website uses Jinja2 templates for rendering HTML                                          | Yes      | Jinja2 is used to render HTML templates with dynamic content.                                                                       |
+| The website includes CSRF protection for forms                                                | Yes      | Flask-WTF provides CSRF protection for forms.                                                                                       |
+| The website securely handles file uploads using Werkzeug's `secure_filename`                  | Yes      | File uploads are handled securely with `secure_filename` to prevent directory traversal attacks.                                    |
+| The website validates email format during registration                                        | Yes      | Registration form validates that email addresses end with '@gmail.com'.                                                             |
+| The website displays flash messages for user feedback                                         | Yes      | Flash messages are used to provide feedback to users (e.g., invalid login, successful signup).                                       |
+| The website uses a session to track logged-in users                                           | Yes      | Flask sessions are used to track logged-in users.                                                                                   |
+| The website has a clear project structure with separation of concerns                         | Yes      | The project structure is organized, separating models, routes, and templates for better maintainability.                            |
+| The website includes CSS for basic styling                                                    | Yes      | Basic CSS is used for styling the HTML templates.                                                                                   |
+| The website's database schema supports relationships between users, posts, comments, and likes| Yes      | SQLAlchemy models define relationships between users, posts, comments, and likes.                                                   |
+| The website provides a `follow_users` page to manage followed users                           | Yes      | Users can view and manage the list of users they follow through the `follow_users` page.                                            |
+| The website handles form submission using both GET and POST methods                           | Yes      | Forms are handled using appropriate HTTP methods (GET for displaying forms, POST for form submissions).                             |
+
+This evaluation table highlights the main features and functionalities of your Flask application, along with confirming that each criterion has been met. It also provides feedback on the implementation of these features.
+
