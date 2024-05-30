@@ -172,25 +172,6 @@ Create a Flask Web application for an online bulletin board system (like reddit)
    - **Usage**: Used to safely handle file uploads.
    - **Website**: https://werkzeug.palletsprojects.com/en/2.0.x/utils/#werkzeug.utils.secure_filename
 
-### Summary of Tools and Their Usage:
-
-- **Flask**: Core framework for web application.
-- **SQLAlchemy**: ORM for database interactions.
-- **Jinja2**: Template rendering.
-- **Werkzeug**: Utilities for request/response handling and security.
-- **WTForms**: Form handling and validation.
-- **Flask-Login**: User session management.
-- **Flask-Migrate**: Database migrations.
-- **Werkzeug Security**: Password hashing and verification.
-- **Flask-WTF**: Integration of WTForms with Flask.
-- **Flask-Mail**: Email sending capabilities.
-- **Flask-Bootstrap**: Bootstrap integration.
-- **functools.wraps**: Creating custom decorators.
-- **datetime**: Handling date and time.
-- **os**: Handling file operations.
-- **secure_filename**: Sanitizing filenames.
-
-
 ### Sources
 
 1. “Decorators in Python.” GeeksforGeeks, https://www.geeksforgeeks.org/decorators-in-python/.
