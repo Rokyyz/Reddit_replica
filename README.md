@@ -323,6 +323,8 @@ Computational Thinking:
 
 ## Add comment System (SC2)
 
+In order for the user to interract with the other users, a comment system is needed. A user might want to express their emotions when viewing a post or their critique.
+
 1. **Route Definition:**
    ```python
    @app.route('/add_comment/<int:post_id>', methods=['POST'])
@@ -368,6 +370,8 @@ Computational Thinking:
 
 ## Edit comment System (SC2)
 
+As mentioned, a comment section is extremely impoortant for all the users of the web application, however, if a mistake is made while making a comment and the post comment button is pressed, the user might want to edit the comment in order to correct some grammar issues, incorrect information, etc.
+
 1. **Route Definition:**
    ```python
    @app.route('/edit_comment/<int:comment_id>', methods=['POST'])
@@ -404,6 +408,8 @@ Computational Thinking:
 - **Algorithm Design:** The algorithm for editing a comment involves parsing form data, retrieving comment information, checking user authorization, updating the comment content, committing the transaction, and responding to the user, all of which are well-defined steps executed to accomplish the task.
 
 ## Delete comment System (SC2)
+
+Similarly with the edit comment system a user might want to delete a comment made given a reason, thus, by pressing a button, the comment should be deleted for every user able to view a post where that coment was initially made.
 
 1. **Route Definition:**
    ```python
@@ -446,6 +452,8 @@ Computational Thinking:
 - **Algorithm Design:** The algorithm for deleting a comment involves querying the database, checking user authorization, deleting the comment if authorized, and generating a JSON response, all of which are well-defined steps executed to accomplish the task.
 
 ## Like post System (SC3)
+
+Smilarly with comments, one of the crucial success criteria dictates that a post liking system should be implemented in order to satisfy the users, since it is another way for a user to interract with a post, although, on a more surface level and a less time/effort consuming level than, for, example a comment would do.
 
 1. **Route Definition:**
    ```python
@@ -496,6 +504,8 @@ Computational Thinking:
 - **Algorithm Design:** The algorithm for liking a post involves querying the database, checking for existing likes, adding a new like if not exists, and generating appropriate responses, all of which are well-defined steps executed to accomplish the task.
 
 ## Unlike post System (SC3)
+
+If a user likes a photo accidentaly or after the review of the post, doesn't agree with the message there or the post in general, they should be able to express this by a dislike button which, if pressed would not only remove an already existing like press, but actually account as a -1 value, that could pottentionally remove someone elses like, thus giving a more accurate statistic and the devide for who likes and who doens't like the post for the creator of it.
 
 1. **Route Definition:**
    ```python
@@ -549,6 +559,8 @@ Computational Thinking:
 
 **I have to note that this was the most interesting part of code for me:**
 
+One of the key concepts of social media web applications such as this is for there to be able to follow users. This system's code isn't the most complicated or lengthy, I fould this the most interesting juust because, in my opinion, it is the most key concept of a social media and by implementing this system, so many other doors open. You can track who you follow and do not follow, by following a user you can see their posts on your feed as well as click on their account to see further relevant information about them like a bio, profile picture and even interract with them directly by sending an email to them privately.
+
 
 1. **Route Definition:**
    ```python
@@ -567,7 +579,6 @@ Purpose: The @login_required decorator is used to protect routes in a Flask appl
 How It Works: When applied to a view function, @login_required checks if the current user is authenticated. If the user is not authenticated, they are redirected to the login view. If the user is authenticated, the request proceeds as normal and the view function is executed.
 
 
-
 3. **Retrieving User Data:**
    ```python
    user = User.query.get(session['user_id'])
@@ -575,7 +586,26 @@ How It Works: When applied to a view function, @login_required checks if the cur
    action = request.form['action']
    ```
 
-   The user object corresponding to the authenticated user is retrieved from the database. The target user object is retrieved based on the user ID provided in the form data. Additionally, the action to be performed (follow or unfollow) is extracted from the form data.
+ **Retrieve Current User:**
+   ```python
+   user = User.query.get(session['user_id'])
+   ```
+   - `session['user_id']`: This retrieves the current user's ID stored in the session. The session is a way to persist user data across requests.
+   - `User.query.get(session['user_id'])`: This line queries the database for a user whose primary key (usually the user ID) matches the value stored in the session. The `get` method is used to retrieve a single user object. This line effectively retrieves the current logged-in user's information from the database and assigns it to the `user` variable.
+
+ **Retrieve Target User:**
+   ```python
+   target_user = User.query.get(request.form['user_id'])
+   ```
+   - `request.form['user_id']`: This retrieves the target user's ID from the form data submitted with the request. `request.form` is a dictionary-like object in Flask that contains the form data sent in the POST request.
+   - `User.query.get(request.form['user_id'])`: This line queries the database for a user whose primary key matches the value retrieved from the form data. This retrieves the information of another user (the target user) and assigns it to the `target_user` variable.
+
+ **Retrieve Action:**
+   ```python
+   action = request.form['action']
+   ```
+   - `request.form['action']`: This retrieves the value associated with the 'action' key from the form data. The action typically indicates what kind of operation is to be performed (e.g., follow, unfollow, like, etc.).
+
 
 4. **Following/Unfollowing Logic:**
    ```python
@@ -584,8 +614,26 @@ How It Works: When applied to a view function, @login_required checks if the cur
    elif action == 'unfollow':
        user.followed.remove(target_user)
    ```
+ **Check Action:**
+   ```python
+   if action == 'follow':
+   ```
+   - This line checks if the action specified in the form data is 'follow'. If it is, the block of code inside this if statement will execute.
 
-   Depending on the action specified in the form data, the authenticated user either follows or unfollows the target user. This is done by adding or removing the target user from the followed users list of the authenticated user.
+**Follow Action:**
+   ```python
+   user.followed.append(target_user)
+   ```
+   - `user.followed` refers to a relationship attribute on the `User` model, which typically represents a list of users that the current user is following.
+   - `.append(target_user)` adds the `target_user` to the `user`'s followed list. This establishes a following relationship between the current user and the target user.
+
+ **Unfollow Action:**
+   ```python
+   elif action == 'unfollow':
+       user.followed.remove(target_user)
+   ```
+   - This line checks if the action specified in the form data is 'unfollow'. If it is, the block of code inside this elif statement will execute.
+   - `user.followed.remove(target_user)` removes the `target_user` from the `user`'s followed list. This removes the following relationship between the current user and the target user.
 
 5. **Committing Changes:**
    ```python
@@ -599,7 +647,19 @@ How It Works: When applied to a view function, @login_required checks if the cur
    return jsonify({'success': 'Action completed'}), 200
    ```
 
-   A JSON response indicating the success of the action is returned along with an HTTP status code 200.
+ **Creating the JSON Response:**
+   ```python
+   return jsonify({'success': 'Action completed'}), 200
+   ```
+   - `jsonify`: This function from Flask is used to convert a Python dictionary into a JSON response. It automatically sets the appropriate `Content-Type` header to `application/json`.
+     - `{'success': 'Action completed'}`: This is the dictionary being converted to JSON. It contains a key `'success'` with the value `'Action completed'`.
+   - The function call `jsonify({'success': 'Action completed'})` returns a Flask `Response` object containing the JSON data.
+
+ **Setting the Status Code:**
+   ```python
+   200
+   ```
+   - The second part of the return statement is the status code. `200` is the HTTP status code for "OK," indicating that the request was successful.
 
 Computational Thinking:
 - **Decomposition:** The `follow_unfollow_user` system decomposes the task into smaller steps: retrieving user data, determining the action to be performed, updating the followed users list, committing changes, and returning a response.
@@ -608,6 +668,8 @@ Computational Thinking:
 - **Algorithm Design:** The algorithm for following or unfollowing a user involves database manipulation (addition/removal from followed users list) and response generation, all of which are well-defined steps executed to perform the desired action.
 
 ## Unfollow_users system (SC4)
+
+Similarly with the like system, the unfollow system relates back to the follow system, a user should have the right to unfollow a person, thus indicating a loss in interest or the disliking of that influencer. By unfollowing a person the user also will not have the posts appear in their personalized feed, and they will be able to see this change in their profile in the following users section
 
 1. **Route Definition:**
    ```python
@@ -659,6 +721,7 @@ Computational Thinking:
 
 ## Profile with relevant information (SC5)
 
+This ties closely together with the follow users system as when a user is followed, both then and there as well as in the feed the user can click on the followed users name to view their account/profile. This system insures that when the name is clicked, all the relevant information is shown to the one requesting the service, but of course they won't be able to edit the information since it will be in "view mode". The user should be able to add a profile picture, display their username, email, add a bio and at the bottom, the send email function. 
 
 1. **Route Definition:**
    ```python
@@ -754,50 +817,89 @@ Computational Thinking:
 
 **I have to note that this was the most difficult part of the code for me:**
 
-1. **Route Definition:**
+The `upload` function is, in my opinion, the biggest part of a web application such as instagram or reddit, which coninscidely I am trying to recreate. This function handles the uploading of posts, including images, to the web application. 
+
+This is the thorough breakdown on how the code works.
+
+1. **Decorator:**
    ```python
    @app.route('/upload', methods=['GET', 'POST'])
    @login_required
-   def upload():
    ```
+   - This function is mapped to the `/upload` URL route, and it accepts both GET and POST requests.
+   - The `@login_required` decorator ensures that only authenticated users can access this route. If a user is not logged in, they are redirected to the login page.
 
-   This defines a route `/upload` for handling both GET and POST requests. The `@login_required` decorator ensures that only authenticated users can access this route.
-
-2. **Form Submission Handling:**
+2. **Method Check:**
    ```python
    if request.method == 'POST':
-       title = request.form['title']
-       content = request.form['content']
-       file = request.files['image']
    ```
+   - The function checks if the request method is POST, indicating that the form for uploading a post has been submitted.
 
-   When the form is submitted via POST, the title, content, and image file uploaded by the user are retrieved from the form data.
+3. **Form Data Extraction:**
+   ```python
+   title = request.form['title']
+   content = request.form['content']
+   file = request.files['image']
+   ```
+   - The function extracts the title, content, and image file from the form submitted by the user.
+   - `request.form['title']` retrieves the title of the post from the form data.
+   - `request.form['content']` retrieves the content of the post from the form data.
+   - `request.files['image']` retrieves the uploaded image file from the form data.
 
-3. **File Upload and Storage:**
+4. **File Validation:**
    ```python
    if file and allowed_file(file.filename):
-       filename = secure_filename(file.filename)
-       file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-       image_url = url_for('static', filename=f'uploads/{filename}')
    ```
+   - The function checks if an image file was uploaded and if its extension is allowed.
+   - The `allowed_file` function is called to determine if the file extension is valid based on the allowed extensions defined earlier (`ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}`).
 
-   If a file is uploaded and it has an allowed file extension (e.g., png, jpg), the file is saved to the server's designated upload folder. A URL for accessing the uploaded image is generated using `url_for`, which is then stored in the database.
+5. **File Saving:**
+   ```python
+   filename = secure_filename(file.filename)
+   file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+   ```
+   - If the uploaded file is valid, its filename is secured using `secure_filename` to prevent any malicious file uploads.
+   - The image file is then saved to the server's filesystem in the designated upload folder (`UPLOAD_FOLDER`) using `file.save`.
 
-4. **Post Creation:**
+6. **Image URL Generation:**
+   ```python
+   image_url = url_for('static', filename=f'uploads/{filename}')
+   ```
+   - After saving the image file, an image URL is generated using `url_for`. This URL will be used to display the image in the post.
+
+7. **Database Interaction:**
    ```python
    new_post = Post(title=title, content=content, image_url=image_url, user_id=session['user_id'])
    db.session.add(new_post)
    db.session.commit()
    ```
+   - A new `Post` object is created with the provided title, content, image URL, and the ID of the currently logged-in user.
+   - The new post is added to the database session and committed to persist the changes in the database.
 
-   A new post object is created with the provided title, content, image URL, and the ID of the authenticated user who uploaded the post. The post object is added to the database, committing the transaction.
-
-5. **Redirection:**
+8. **Redirection:**
    ```python
    return redirect(url_for('dashboard'))
    ```
+   - After successfully uploading the post, the user is redirected to the dashboard page to view their posts and followed posts.
 
-   Upon successful upload, the user is redirected to the dashboard page where they can view their uploaded post along with other content.
+### Other Considerations:
+
+- **Security Measures:**
+  - The `secure_filename` function helps prevent directory traversal and other security vulnerabilities by sanitizing the filename.
+  - The `allowed_file` function ensures that only files with specific extensions (`png`, `jpg`, `jpeg`, `gif`) are accepted for upload, mitigating the risk of uploading malicious files.
+
+- **Database Interaction:**
+  - The function interacts with the database to store the uploaded post, associating it with the user who uploaded it.
+
+- **User Authentication:**
+  - The `@login_required` decorator ensures that only authenticated users can access the upload page. If a user is not logged in, they are redirected to the login page.
+
+- **Template Rendering:**
+  - If the request method is GET (i.e., the user is accessing the upload page), the function renders the `upload.html` template, allowing the user to fill out the form to upload a post.
+
+### Developer's Perspective:
+
+From a developer's perspective, the `upload` function encapsulates the logic for handling post uploads, including file validation, security measures, database interaction, and redirection. It promotes code readability, maintainability, and security by breaking down the process into smaller, manageable steps. Additionally, the integration with other parts of the application, such as user authentication and database models, ensures seamless functionality within the larger context of the web application.
 
 Computational Thinking:
 - **Decomposition:** The upload system decomposes the task of uploading a post into smaller steps: form submission handling, file upload and storage, post creation, and redirection.
@@ -806,6 +908,8 @@ Computational Thinking:
 - **Algorithm Design:** The algorithm for uploading a post involves multiple steps such as file validation, storage, database interaction, and redirection, all of which are well-defined and sequentially executed to ensure a smooth user experience.
 
 ## Send email System (SC7 HL++)
+
+The last points of user success criteria outlined a function that the user should be able to send an email to another user. In this web application if a user were to go to his following list or click on another user's profile in the feed section, they should be able to see a button to send an email to that specific user. This allows both users to connect with each other on a more personal and private level allowing to connect and grow relationships, crucial to a social media web application like this.
 
 1. **Route Definition:**
    ```python
