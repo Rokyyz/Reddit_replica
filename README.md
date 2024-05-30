@@ -345,8 +345,17 @@ Computational Thinking:
    ```
 
    This route `/follow_unfollow_user` is defined to handle POST requests. The `@login_required` decorator ensures that only authenticated users can access this route.
+To go more in depth in the decorator:
+The @login_required decorator is a feature provided by Flask-Login, an extension for Flask that handles user session management and authentication.
 
-2. **Retrieving User Data:**
+Functionality of @login_required:
+Purpose: The @login_required decorator is used to protect routes in a Flask application, ensuring that only authenticated users can access them. If an unauthenticated user attempts to access a protected route, they are redirected to the login page.
+
+How It Works: When applied to a view function, @login_required checks if the current user is authenticated. If the user is not authenticated, they are redirected to the login view. If the user is authenticated, the request proceeds as normal and the view function is executed.
+
+
+
+3. **Retrieving User Data:**
    ```python
    user = User.query.get(session['user_id'])
    target_user = User.query.get(request.form['user_id'])
@@ -355,7 +364,7 @@ Computational Thinking:
 
    The user object corresponding to the authenticated user is retrieved from the database. The target user object is retrieved based on the user ID provided in the form data. Additionally, the action to be performed (follow or unfollow) is extracted from the form data.
 
-3. **Following/Unfollowing Logic:**
+4. **Following/Unfollowing Logic:**
    ```python
    if action == 'follow':
        user.followed.append(target_user)
@@ -365,14 +374,14 @@ Computational Thinking:
 
    Depending on the action specified in the form data, the authenticated user either follows or unfollows the target user. This is done by adding or removing the target user from the followed users list of the authenticated user.
 
-4. **Committing Changes:**
+5. **Committing Changes:**
    ```python
    db.session.commit()
    ```
 
    After updating the followed users list, the changes are committed to the database to persist the follow/unfollow action.
 
-5. **Returning Response:**
+6. **Returning Response:**
    ```python
    return jsonify({'success': 'Action completed'}), 200
    ```
