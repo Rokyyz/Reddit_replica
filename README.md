@@ -97,7 +97,6 @@ Create a Flask Web application for an online bulletin board system (like reddit)
    - **Description**: An SQL toolkit and Object-Relational Mapping (ORM) library for Python.
    - **Usage**: Used to define the database schema, query the database, and manage relationships between tables.
 
-
 3. **Jinja2**:
    - **Description**: A templating engine for Python.
    - **Usage**: Used to render HTML templates with dynamic data in the Flask application.
@@ -106,63 +105,51 @@ Create a Flask Web application for an online bulletin board system (like reddit)
    - **Description**: A comprehensive WSGI web application library.
    - **Usage**: Provides utilities for request and response handling, URL routing, and security features.
 
-
 5. **WTForms**:
    - **Description**: A flexible forms validation and rendering library for Python web development.
    - **Usage**: Handles form data validation and rendering in Flask applications.
-
 
 6. **Flask-Login**:
    - **Description**: A user session management extension for Flask.
    - **Usage**: Manages user authentication, login sessions, and access control.
 
-
 7. **Flask-Migrate**:
    - **Description**: Handles SQLAlchemy database migrations for Flask applications using Alembic.
    - **Usage**: Manages database schema changes over time.
-
 
 8. **Werkzeug Security**:
    - **Description**: Part of Werkzeug that provides security utilities.
    - **Usage**: Used for password hashing and verification.
 
-
 9. **Flask-WTF**:
    - **Description**: Integrates WTForms with Flask.
    - **Usage**: Provides form handling and validation integrated with Flask.
-
 
 10. **Flask-Mail**:
     - **Description**: An extension for Flask that provides simple email sending capabilities.
     - **Usage**: Used to send emails from the Flask application.
 
-
 11. **Flask-Bootstrap**:
     - **Description**: Integrates Bootstrap into Flask.
     - **Usage**: Used to apply Bootstrap CSS and JavaScript to the Flask application.
-
 
 ### Additional Libraries Used:
 
 1. **functools.wraps**:
    - **Description**: A decorator for updating wrapper functions in a way that they look more like the wrapped function.
    - **Usage**: Used in creating custom decorators such as `login_required`.
-   - **Website**: https://docs.python.org/3/library/functools.html#functools.wraps
 
 2. **datetime**:
    - **Description**: A module for manipulating dates and times.
    - **Usage**: Used to handle date and time operations in your models.
-   - **Website**: https://docs.python.org/3/library/datetime.html
 
 3. **os**:
    - **Description**: A module providing a portable way of using operating system dependent functionality.
    - **Usage**: Used to handle file paths and perform file operations.
-   - **Website**: https://docs.python.org/3/library/os.html
 
 4. **secure_filename from werkzeug.utils**:
    - **Description**: A function that sanitizes a filename to ensure it is safe for storing on a filesystem.
    - **Usage**: Used to safely handle file uploads.
-   - **Website**: https://werkzeug.palletsprojects.com/en/2.0.x/utils/#werkzeug.utils.secure_filename
 
 ### Sources
 
