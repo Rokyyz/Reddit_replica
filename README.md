@@ -69,6 +69,30 @@ Create a Flask Web application for an online bulletin board system (like reddit)
 14. **Date and Time Handling**:
     - The `datetime` module is used to handle date and time, e.g., when a post or comment is created.
 
+15. **Object-Oriented Programming (OOP)**:
+   - The `User`, `Post`, `Like`, and `Comment` classes are defined as models using SQLAlchemy, an ORM library. These classes define the structure and behavior of the data in the database.
+
+16. **Class Relationships and Foreign Keys**:
+   - Relationships between models are established using `db.relationship` and `db.ForeignKey`.
+   - Many-to-many relationship: The `User` model has a self-referential many-to-many relationship through the `followers` table.
+   - One-to-many relationship: The `Post` model has a one-to-many relationship with the `Comment` and `Like` models.
+   - The `Comment` and `Like` models use foreign keys to reference the `User` and `Post` models.
+
+17. **Table Relationships**:
+   - The `followers` association table is defined to handle the many-to-many relationship between users.
+   - Backrefs (`db.backref`) are used to create a bidirectional relationship, allowing easy access to related objects from either side of the relationship.
+
+18. **Default Values and Constraints**:
+   - Columns have default values (e.g., `date_posted` with `datetime.utcnow`).
+   - Constraints like `unique=True` ensure unique values for columns such as `username` and `email`.
+
+19. **Primary and Unique Constraints**:
+   - Primary keys are defined using `primary_key=True`.
+   - Unique constraints are defined using `db.UniqueConstraint` for composite keys, ensuring a user cannot like the same post multiple times.
+
+20. **Custom Methods**:
+   - The `like_count` method in the `Post` model calculates the number of likes a post has, demonstrating how custom methods can be added to models for additional functionality.
+
 
 ## Sources
 
