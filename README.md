@@ -3,6 +3,7 @@ For our Unit 4 and final G11 CS project we were tasked with re-creating a online
 In accordance with this I chose to develop a redesign that would solely surround fashion, I got some inspiration from Pinterest
 
 # Criteria C: Development
+
 ## Success Criteria
 Create a Flask Web application for an online bulletin board system (like reddit). You are free to set the general theme, groups, visuals (CSS), topics, etc, but you need:
 
@@ -19,6 +20,11 @@ Create a Flask Web application for an online bulletin board system (like reddit)
 6. [HLs] upload images
 
 7. [HL++] send emails
+
+
+## Sources
+
+
 
 ## Code explain 
 
