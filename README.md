@@ -25,50 +25,53 @@ Create a Flask Web application for an online bulletin board system (like reddit)
 
 ## Techniques used 
 
-Flask Library:
+The provided code utilizes various programming techniques and libraries to create a web application with user authentication, posting, and interaction features. Here's a breakdown of the techniques used in this code:
 
-The code uses Flask to create a web application. Flask is a micro web framework for Python.
-Routes are defined using Flask decorators like @app.route.
-Functions:
+### Techniques Used
 
-Functions are used extensively for defining routes and handling logic. Example: login_required, allowed_file, and all route functions (login, signup, etc.).
-If Statements:
+1. **Flask Library**:
+   - The code uses Flask to create a web application. Flask is a micro web framework for Python.
+   - Routes are defined using Flask decorators like `@app.route`.
 
-Conditional logic is used throughout the code to handle various conditions. Example: Checking if the user is logged in, if a user exists, or if a file is allowed.
-Variables:
+2. **Functions**:
+   - Functions are used extensively for defining routes and handling logic. Example: `login_required`, `allowed_file`, and all route functions (`login`, `signup`, etc.).
 
-Variables are used to store data temporarily within functions and to hold configuration settings like ALLOWED_EXTENSIONS.
-HTML Template Usage:
+3. **If Statements**:
+   - Conditional logic is used throughout the code to handle various conditions. Example: Checking if the user is logged in, if a user exists, or if a file is allowed.
 
-Flask's render_template function is used to render HTML templates. This allows for separation of HTML content from Python code.
-Get/Post Methods:
+4. **Variables**:
+   - Variables are used to store data temporarily within functions and to hold configuration settings like `ALLOWED_EXTENSIONS`.
 
-The code handles different HTTP methods (GET and POST) for various routes to manage form submissions and data retrieval.
-Session Management:
+5. **HTML Template Usage**:
+   - Flask's `render_template` function is used to render HTML templates. This allows for separation of HTML content from Python code.
 
-Flask's session object is used to manage user sessions, storing the user_id to keep track of logged-in users.
-Database Interaction:
+6. **Get/Post Methods**:
+   - The code handles different HTTP methods (`GET` and `POST`) for various routes to manage form submissions and data retrieval.
 
-SQLAlchemy is used for ORM (Object Relational Mapping) to interact with the database. Example: querying users, posts, comments, and likes.
-Example models are User, Post, Comment, and Like.
-Encryption:
+7. **Session Management**:
+   - Flask's `session` object is used to manage user sessions, storing the `user_id` to keep track of logged-in users.
 
-The code uses generate_password_hash and check_password_hash from werkzeug.security for password hashing and verification.
-File Handling:
+8. **Database Interaction**:
+   - SQLAlchemy is used for ORM (Object Relational Mapping) to interact with the database. Example: querying users, posts, comments, and likes.
+   - Example models are `User`, `Post`, `Comment`, and `Like`.
 
-Functions like allowed_file and the usage of secure_filename handle file uploads securely.
-Flash Messages:
+9. **Encryption**:
+   - The code uses `generate_password_hash` and `check_password_hash` from `werkzeug.security` for password hashing and verification.
 
-Flask's flash function is used to display messages to the user.
-JSON:
+10. **File Handling**:
+    - Functions like `allowed_file` and the usage of `secure_filename` handle file uploads securely.
 
-JSON responses are used for AJAX requests, such as in the follow_unfollow_user and add_comment routes.
-Decorators:
+11. **Flash Messages**:
+    - Flask's `flash` function is used to display messages to the user.
 
-The login_required decorator is a custom decorator to ensure routes are accessible only to logged-in users.
-Date and Time Handling:
+12. **JSON**:
+    - JSON responses are used for AJAX requests, such as in the `follow_unfollow_user` and `add_comment` routes.
 
-The datetime module is used to handle date and time, e.g., when a post or comment is created.
+13. **Decorators**:
+    - The `login_required` decorator is a custom decorator to ensure routes are accessible only to logged-in users.
+
+14. **Date and Time Handling**:
+    - The `datetime` module is used to handle date and time, e.g., when a post or comment is created.
 
 
 ## Sources
