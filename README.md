@@ -838,11 +838,15 @@ This is the thorough breakdown on how the code works.
    - This function is mapped to the `/upload` URL route, and it accepts both GET and POST requests.
    - The `@login_required` decorator ensures that only authenticated users can access this route. If a user is not logged in, they are redirected to the login page.
 
+[^22] [^1] [^2]
+
 2. **Method Check:**
    ```python
    if request.method == 'POST':
    ```
    - The function checks if the request method is POST, indicating that the form for uploading a post has been submitted.
+
+[^7]
 
 3. **Form Data Extraction:**
    ```python
@@ -855,12 +859,15 @@ This is the thorough breakdown on how the code works.
    - `request.form['content']` retrieves the content of the post from the form data.
    - `request.files['image']` retrieves the uploaded image file from the form data.
 
+[^7]
+
 4. **File Validation:**
    ```python
    if file and allowed_file(file.filename):
    ```
    - The function checks if an image file was uploaded and if its extension is allowed.
    - The `allowed_file` function is called to determine if the file extension is valid based on the allowed extensions defined earlier (`ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}`).
+[^12]
 
 5. **File Saving:**
    ```python
@@ -870,11 +877,15 @@ This is the thorough breakdown on how the code works.
    - If the uploaded file is valid, its filename is secured using `secure_filename` to prevent any malicious file uploads.
    - The image file is then saved to the server's filesystem in the designated upload folder (`UPLOAD_FOLDER`) using `file.save`.
 
+[^11], [^12]
+
 6. **Image URL Generation:**
    ```python
    image_url = url_for('static', filename=f'uploads/{filename}')
    ```
    - After saving the image file, an image URL is generated using `url_for`. This URL will be used to display the image in the post.
+
+[^1]
 
 7. **Database Interaction:**
    ```python
@@ -884,6 +895,8 @@ This is the thorough breakdown on how the code works.
    ```
    - A new `Post` object is created with the provided title, content, image URL, and the ID of the currently logged-in user.
    - The new post is added to the database session and committed to persist the changes in the database.
+
+[^9], [^18]
 
 8. **Redirection:**
    ```python
