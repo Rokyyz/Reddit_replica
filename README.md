@@ -578,7 +578,7 @@ Purpose: The @login_required decorator is used to protect routes in a Flask appl
 
 How It Works: When applied to a view function, @login_required checks if the current user is authenticated. If the user is not authenticated, they are redirected to the login view. If the user is authenticated, the request proceeds as normal and the view function is executed.
 
-[^2]: [^22]:
+[^2], [^22]
 
 3. **Retrieving User Data:**
    ```python
@@ -607,6 +607,7 @@ How It Works: When applied to a view function, @login_required checks if the cur
    ```
    - `request.form['action']`: This retrieves the value associated with the 'action' key from the form data. The action typically indicates what kind of operation is to be performed (e.g., follow, unfollow, like, etc.).
 
+[^8], [^7]
 
 4. **Following/Unfollowing Logic:**
    ```python
@@ -636,12 +637,16 @@ How It Works: When applied to a view function, @login_required checks if the cur
    - This line checks if the action specified in the form data is 'unfollow'. If it is, the block of code inside this elif statement will execute.
    - `user.followed.remove(target_user)` removes the `target_user` from the `user`'s followed list. This removes the following relationship between the current user and the target user.
 
+[^9], [^18]
+
 5. **Committing Changes:**
    ```python
    db.session.commit()
    ```
 
    After updating the followed users list, the changes are committed to the database to persist the follow/unfollow action.
+
+[^9]
 
 6. **Returning Response:**
    ```python
@@ -661,6 +666,8 @@ How It Works: When applied to a view function, @login_required checks if the cur
    200
    ```
    - The second part of the return statement is the status code. `200` is the HTTP status code for "OK," indicating that the request was successful.
+
+[^14]
 
 Computational Thinking:
 - **Decomposition:** The `follow_unfollow_user` system decomposes the task into smaller steps: retrieving user data, determining the action to be performed, updating the followed users list, committing changes, and returning a response.
