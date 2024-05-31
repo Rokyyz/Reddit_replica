@@ -979,6 +979,8 @@ Computational Thinking:
 
 # Criteria D: Functionality
 
+https://youtu.be/EeNAVWVv7xg 
+
 # Criteria E: Evaluation
 
 
