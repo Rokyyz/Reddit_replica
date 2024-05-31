@@ -214,6 +214,8 @@ When the form is submitted via POST, the username and password entered by the us
        return redirect(url_for('login'))
    ```
 
+[^15]
+
 1) Database Query:
 The User.query.filter_by(username=username).first() line queries the database for a user with the provided username. The first() method returns the first result of the query, or None if no user is found.
 
@@ -933,6 +935,8 @@ Computational Thinking:
 
 The last points of user success criteria outlined a function that the user should be able to send an email to another user. In this web application if a user were to go to his following list or click on another user's profile in the feed section, they should be able to see a button to send an email to that specific user. This allows both users to connect with each other on a more personal and private level allowing to connect and grow relationships, crucial to a social media web application like this.
 
+[^23]
+
 1. **Route Definition:**
    ```python
    @app.route('/send_email', methods=['POST'])
@@ -983,7 +987,7 @@ The last points of user success criteria outlined a function that the user shoul
    ```python
    flash('Email sent (printed to terminal) successfully', 'success')
    ```
-
+[^28]
    After the email message is logged, a success message is flashed to the user interface, indicating that the email has been "sent."
 
 7. **Redirecting User:**
