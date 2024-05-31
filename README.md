@@ -578,7 +578,7 @@ Purpose: The @login_required decorator is used to protect routes in a Flask appl
 
 How It Works: When applied to a view function, @login_required checks if the current user is authenticated. If the user is not authenticated, they are redirected to the login view. If the user is authenticated, the request proceeds as normal and the view function is executed.
 
-[2] [22]
+[^2]: [^22]:
 
 3. **Retrieving User Data:**
    ```python
