@@ -1011,6 +1011,7 @@ https://youtu.be/EeNAVWVv7xg
 
 
 <img width="861" alt="Screenshot 2024-05-30 at 23 14 47" src="https://github.com/Rokyyz/Reddit_replica/assets/134658259/7aad8089-052a-4b2a-8e4e-46afc59c1b84">
+Fig 1
 
 ### Things to improve in the future based on my and another developer's review
 
