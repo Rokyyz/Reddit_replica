@@ -578,6 +578,7 @@ Purpose: The @login_required decorator is used to protect routes in a Flask appl
 
 How It Works: When applied to a view function, @login_required checks if the current user is authenticated. If the user is not authenticated, they are redirected to the login view. If the user is authenticated, the request proceeds as normal and the view function is executed.
 
+[2] [22]
 
 3. **Retrieving User Data:**
    ```python
@@ -666,6 +667,7 @@ Computational Thinking:
 - **Pattern Recognition:** The system recognizes patterns in extracting form data, updating database records, and generating JSON responses.
 - **Abstraction:** The system abstracts away database manipulation complexities and response handling details, allowing developers to focus on the higher-level logic of user interaction.
 - **Algorithm Design:** The algorithm for following or unfollowing a user involves database manipulation (addition/removal from followed users list) and response generation, all of which are well-defined steps executed to perform the desired action.
+
 
 ## Unfollow_users system (SC4)
 
